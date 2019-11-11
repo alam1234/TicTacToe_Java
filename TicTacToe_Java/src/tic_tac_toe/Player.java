@@ -12,7 +12,6 @@ import java.util.Scanner;
  * @since   2019-11-10
  */
 public class Player extends Intelligence {
-	
 	public static Scanner in;
 	public int currentPlayer; // the current player (CROSS or NOUGHT)
 	public int switchPlayer( int currentPlayer) {
@@ -22,16 +21,16 @@ public class Player extends Intelligence {
 	/** Player Human or Computer with the "theSeed" makes one move.
     Update global variables "currentRow" and "currentCol". */
 	public void playerMove(int theSeed) {
-	   if (theSeed == CROSS) {
-		   playerMoveHuman(theSeed);
-	   } else {
-		   System.out.print("Player 'Computer' is moved as below: \n");
-		   Position pos = findBestMove();    // Computer searching for best move.
-		   currntRow = pos.row;
-		   currentCol = pos.col;
+		if (theSeed == CROSS) {
+			playerMoveHuman(theSeed);
+		} else {
+			System.out.print("Player 'Computer' is moved as below: \n");
+			Position pos = findBestMove();    // Computer searching for best move.
+			currntRow = pos.row;
+			currentCol = pos.col;
 		   
-		   board[currntRow][currentCol] = theSeed;  // update game-board content
-	   }
+			board[currntRow][currentCol] = theSeed;  // update game-board content
+		}
 	}
 
 	/** Player Human with the "theSeed" makes one move, with input validation.

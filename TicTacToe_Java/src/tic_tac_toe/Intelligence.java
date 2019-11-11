@@ -12,7 +12,6 @@ import java.util.List;
  * @since   2019-11-10
  */
 public class Intelligence extends Board {
-	
 	public static int currntRow, currentCol; // current seed's row and column
 	
 	/** This method search empty positions of the board and returns positions in a list */

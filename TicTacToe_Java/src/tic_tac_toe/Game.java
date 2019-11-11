@@ -32,6 +32,7 @@ public class Game extends Player {
 	  		"| Human(You):     X                   |\r\n" + 
 	  		"| CPU(Computer):  O                   |\r\n" + 
 	  		"=======================================");
+		game.positionMap();
 		do {
 			// Initialize the game-board and current status
 			game.startGame();
@@ -60,24 +61,24 @@ public class Game extends Player {
 	
 	/** Initialize the game-board contents and the current states */
 	public void startGame() {
-	   for (int row = 0; row < 3; ++row) {
-	      for (int col = 0; col < 3; ++col) {
-	         board[row][col] = EMPTY;  // all cells empty
-	      }
-	   }
-	   currentState = PLAYING; // ready to play
-	   currentPlayer = whoStart;  // cross plays first
-	   whoStart =  (whoStart == CROSS) ? NOUGHT : CROSS;
+		for (int row = 0; row < 3; ++row) {
+			for (int col = 0; col < 3; ++col) {
+				board[row][col] = EMPTY;  // all cells empty
+			}
+		}
+		currentState = PLAYING; // ready to play
+		currentPlayer = whoStart;  // cross plays first
+		whoStart =  (whoStart == CROSS) ? NOUGHT : CROSS;
 	}
 	
 	/** Update the "currentState" after the player with "theSeed" has placed on
 	    (currentRow, currentCol). */
 	public void updateGame(int theSeed, int currentRow, int currentCol) {
-	   if (hasWon(theSeed, currentRow, currentCol)) {  // check if winning move
-	      currentState = (theSeed == CROSS) ? CROSS_WON : NOUGHT_WON;
-	   } else if (isDraw()) {  // check for draw
-	      currentState = DRAW;
-	   }
+		if (hasWon(theSeed, currentRow, currentCol)) {  // check if winning move
+			currentState = (theSeed == CROSS) ? CROSS_WON : NOUGHT_WON;
+		} else if (isDraw()) {  // check for draw
+			currentState = DRAW;
+		}
 	}
 	
 	/** Return true if it is a draw (no more empty cell) */
