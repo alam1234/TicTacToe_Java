@@ -20,7 +20,6 @@ public class Game extends Player {
 	public static int currentState;  // the current state of the game
 	                                 // (PLAYING, DRAW, CROSS_WON, NOUGHT_WON)
 	public int whoStart = CROSS;
-	public static int currntRow, currentCol; // current seed's row and column
 	
 	/** The entry main method (the program starts here) */
 	public static void main(String[] args) {
@@ -82,7 +81,6 @@ public class Game extends Player {
 	}
 	
 	/** Return true if it is a draw (no more empty cell) */
-	// TODO: Shall declare draw if no player can "possibly" win
 	public boolean isDraw() {
 		for (int row = 0; row < 3; ++row) {
 			for (int col = 0; col < 3; ++col) {
