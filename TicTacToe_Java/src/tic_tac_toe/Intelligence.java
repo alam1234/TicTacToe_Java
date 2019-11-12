@@ -28,12 +28,12 @@ public class Intelligence extends Board {
 	}
 	
     /* This method finds maximum value*/
-	public static int max(int a, int b) {
+	public int max(int a, int b) {
 		return a > b ? a : b;
 	}
 
     /* This method finds minimum value*/
-	public static int min(int a, int b) {
+	public int min(int a, int b) {
 		return a < b ? a : b;
 	}
 
