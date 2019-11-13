@@ -23,5 +23,6 @@ How to run:
     - From the Package Explorer -> Select the project "TicTacToe_Java".
     - From project menu -> Build the project
     - From 'Run' menu -> Run As -> Java Application
+    - Tic Tac Toe game will be run in the console mode
     - From 'Run' menu -> Run As -> JUnit Test
     - Test suite result will be displayed.
