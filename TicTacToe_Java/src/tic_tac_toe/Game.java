@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author  Zahangir Alam
  * @version 1.0
- * @since   2019-07-03 
+ * @since   2019-11-10 
  */
 public class Game extends Player {
 	// Name-constants to represent the various states of the game
