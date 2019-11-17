@@ -14,6 +14,8 @@ import java.util.Scanner;
 public class Player extends Intelligence {
 	public static Scanner in;
 	public int currentPlayer; // the current player (CROSS or NOUGHT)
+	
+	/** This mothod switch player between CROSS and NOUGHT*/
 	public int switchPlayer( int currentPlayer) {
 		return currentPlayer = (currentPlayer == CROSS) ? NOUGHT : CROSS;
 	}
@@ -29,7 +31,7 @@ public class Player extends Intelligence {
 			currntRow = pos.row;
 			currentCol = pos.col;
 		   
-			board[currntRow][currentCol] = theSeed;  // update game-board content
+			board[currntRow][currentCol] = theSeed;  // update game-board's content
 		}
 	}
 
@@ -38,7 +40,7 @@ public class Player extends Intelligence {
 	public void playerMoveHuman(int theSeed) {
 		boolean validInput = false;  // for input validation
 		do {
-			System.out.print(" Player 'You', Please enter your move from position (1-9): ");
+			System.out.print("Player 'You', Please enter your move from position (1-9): ");
 			try {
 				in = new Scanner(System.in); // the input Scanner
 				int position = in.nextInt() - 1;  // array index starts at 0 instead of 1

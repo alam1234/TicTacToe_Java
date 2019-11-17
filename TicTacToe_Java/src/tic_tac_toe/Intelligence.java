@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * Intelligence.class implements how to Computer turns in the best position.
- * * This class inherited the Board class.
+ * This class inherited the Board class.
  * Check in all possible combinations and choose the best position.
  * 
  * @author  Zahangir Alam
@@ -14,7 +14,7 @@ import java.util.List;
 public class Intelligence extends Board {
 	public static int currntRow, currentCol; // current seed's row and column
 	
-	/** This method search empty positions of the board and returns positions in a list */
+	/** This method search empty positions of the board and returns in a list */
 	public List <Position> nextMoves() {
 	List <Position> emptyPositions = new ArrayList <>();
 		for(int i = 0; i < 3; i++) {

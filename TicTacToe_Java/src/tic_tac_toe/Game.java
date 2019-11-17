@@ -1,5 +1,6 @@
 package tic_tac_toe;
 
+import java.util.List;
 import java.util.Scanner;
 /**
  * Game.class implements the 'main' method which control the game.
@@ -19,7 +20,7 @@ public class Game extends Player {
 
 	public static int currentState;  // the current state of the game
 	                                 // (PLAYING, DRAW, CROSS_WON, NOUGHT_WON)
-	public int whoStart = CROSS;
+	public int whoStart = CROSS;   // cross plays first
 	
 	/** The entry main method (the program starts here) */
 	public static void main(String[] args) {
@@ -52,8 +53,8 @@ public class Game extends Player {
 				// Switch player
 				game.currentPlayer = game.switchPlayer(game.currentPlayer);
 			} while (currentState == PLAYING); // repeat if not game-over
-			System.out.println("\nDo you want to play again?"
-				+ "\nYes or No?\nPlease press 'y' to continue or press 'n' to exit the game.");
+			System.out.print("\nDo you want to play again?"
+				+ "\nYes or No?\nPlease press 'y' to continue or press 'n' to exit the game: ");
 			nextRound = in.next().charAt(0);
 		} while (nextRound == 'y' || nextRound == 'Y');
 		System.out.println("Thank you for enjoying the game.\nGood Bye!");
@@ -61,13 +62,14 @@ public class Game extends Player {
 	
 	/** Initialize the game-board contents and the current states */
 	public void startGame() {
+		System.out.println("The game is started:");
 		for (int row = 0; row < 3; ++row) {
 			for (int col = 0; col < 3; ++col) {
 				board[row][col] = EMPTY;  // all cells empty
 			}
 		}
 		currentState = PLAYING; // ready to play
-		currentPlayer = whoStart;  // cross plays first
+		currentPlayer = whoStart;
 		whoStart =  (whoStart == CROSS) ? NOUGHT : CROSS;
 	}
 	
@@ -83,13 +85,10 @@ public class Game extends Player {
 	
 	/** Return true if it is a draw (no more empty cell) */
 	public boolean isDraw() {
-		for (int row = 0; row < 3; ++row) {
-			for (int col = 0; col < 3; ++col) {
-				if (board[row][col] == EMPTY) {
-					return false;  // an empty cell found, not draw, exit
-				}
-			}
+		List <Position> pos = nextMoves();
+		if (pos.size() == 0) {
+			return true;  // no empty cell, it's a draw
 		}
-		return true;  // no empty cell, it's a draw
+		return false;
 	}
 }

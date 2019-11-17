@@ -1,6 +1,7 @@
 package tic_tac_toe;
 /**
- * Board.class is to created 3x3 tic tac toe board.
+ * Board.class creates a 3x3 tic tac toe board.
+ * Shows position number of each cell.
  * Prints the board after turn a player.
  * 
  * @author  Zahangir Alam
@@ -18,11 +19,11 @@ public class Board {
 	public void positionMap() {
 		System.out.println("\nPlease check position numbers from below:\n");
 		System.out.println(" 1 | 2 | 3\n-----------\n 4 | 5 | 6\n-----------\n 7 | 8 | 9 \n");
-		System.out.println("The game is started:\n");
 	}
 	
 	/** Print the game board */
 	public void printBoard() {
+		System.out.println();
 		for (int row = 0; row < 3; ++row) {
 			for (int col = 0; col < 3; ++col) {
 				printCell(board[row][col]); // print each of the cells
